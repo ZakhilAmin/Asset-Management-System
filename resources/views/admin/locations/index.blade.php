@@ -1,0 +1,52 @@
+@extends('layouts.admin-master')
+
+@section('title')
+	 Location
+@endsection
+
+@section('page_title')
+	List of Locations
+@endsection
+
+@section('btn')
+<a class="btn btn-primary top-right-align" href="{{ route('location.create') }}">
+  <li class="fa fa-plus"></li>&nbsp;Add New
+</a>
+@endsection
+
+@section('content')
+  
+  <div class="uper p-relative">
+        @include('includes.info-box') {{-- For Alerts  --}}
+
+    <table class="table table-striped text-center">
+      <thead class="bg-primary">
+          <tr>
+              <td style="background-color: paleturquoise; color:blue">@sortablelink('id')</td>
+            <td>Location Name</td>
+            <td colspan="2">Actions</td>
+          </tr>
+      </thead>
+      <tbody>
+          @foreach($locations as $location)
+          <tr>
+              <td>{{$location->id}}</td>
+              <td>{{$location->name}}</td>
+              <td class="text text-right"><a href="{{ route('location.edit',$location->id)}}" class="btn btn-primary">
+              <li class="fa fa-edit"></li></a></td>
+              <td class="text text-left">
+                  <form action="{{ route('location.destroy', $location->id)}}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger" onclick="return confirm('Are you sure?')" type="submit"><li class="fa fa-trash"></li></button>
+                  </form>
+              </td>
+          </tr>
+          @endforeach
+      </tbody>
+    </table>
+    <div class="col-gl-12 col-md-12 col-xs-12 text-center">
+        {{$locations->links()}}
+      </div>
+  <div>
+@endsection

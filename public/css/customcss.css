@@ -1,0 +1,61 @@
+.uper {
+    margin-top: 10px;
+  }
+
+  .top-right-align {
+    position: absolute; 
+    top:2%; 
+    right:2%;
+  }
+
+  .btn-section {
+    position: absolute; 
+    top:38px; 
+    right: 15px;
+  }
+
+  .p-relative {
+      position: relative;
+  }
+
+  .p-absolute {
+    position: absolute;
+  }
+
+  .right-auto {
+    margin-right: 0;
+  }
+
+  .row{
+    margin-top:0px;
+    padding: 0 0px;
+}
+
+.clickable{
+    cursor: pointer;   
+}
+
+.panel-heading span {
+	margin-top: -20px;
+}
+ 
+.background-style {
+  background-color: white;
+  border-radius: 20px;
+  margin-top: 40px; 
+  margin-bottom: 40px;
+  padding: 20px;
+  min-height: 580px;
+}
+
+.h1-margin {
+margin: 3px;
+}
+
+.title-style {
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: blue;
+  border-bottom: 1px solid blue;
+}
+
+
